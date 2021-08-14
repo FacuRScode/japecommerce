@@ -7,19 +7,43 @@ body{
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    padding-top: 2px;
+    padding-top: 50px;
     padding-bottom: 40px;
     background-color: #f5f5f5;
   }
 
-  .signin {
+  .login {
     width: 100%;
     max-width: 330px;
     padding: 15px;
     margin: auto;
   }
 
-.logo{ 
-    width: 650px;
-    height: 370px; 
+
+.login h2 {
+margin: 0%;
+padding: 0 0 20px;
+text-align: center;
+font-size: 30px;
 }
+
+.login input{  
+    -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        border: 1px;
+        border-color: black;
+        padding: 0 4px 0 4px;
+        width: 100%;
+    height: 45px;
+
+}
+
+.login .button {
+    background-color: dodgerblue;
+    color: white;
+}
+
+
+
+
