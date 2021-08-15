@@ -40,6 +40,12 @@ var getJSONData = function(url){
     });
 }
 
+// if(location.pathname !== location.pathname.endsWith('login.html')){
+//   location.href='login.html'
+// } else{
+//   if(sessionStorage.getItem('usuario'))
+// }
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
