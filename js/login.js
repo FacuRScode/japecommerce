@@ -4,4 +4,12 @@
 document.addEventListener("DOMContentLoaded", function(e){
 });
 let usuario= document.getElementById("user").Value;
-localStorage.setItem("usuario", usuario);
+let password= document.getElementById("password").Value;
+
+btn_ingresar.addEventListener('click', function(evento){
+    evento.preventDefault()
+    localStorage.setItem("usuario", usuario);
+    localStorage.setItem("contrasenia", password);
+    location.href = 'index.html'
+})
+
