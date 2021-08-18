@@ -1,6 +1,6 @@
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
-const ORDER_BY_PROD_SOLD = "Cant.";
+const ORDER_BY_PROD_COST = "Cost.";
 var currentProductsArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
@@ -21,10 +21,10 @@ function sortProducts(criteria, array){
             if ( a.name < b.name ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_BY_PROD_SOLD){
+    }else if (criteria === ORDER_BY_PROD_COST){
         result = array.sort(function(a, b) {
-            let aCount = parseInt(a.soldCount);
-            let bCount = parseInt(b.soldCount);
+            let aCount = parseInt(a.cost);
+            let bCount = parseInt(b.cost);
 
             if ( aCount > bCount ){ return -1; }
             if ( aCount < bCount ){ return 1; }
@@ -41,8 +41,8 @@ function showProductsList(){
     for(let i = 0; i < currentProductsArray.length; i++){
         let product = currentProductsArray[i];
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(product.soldCount) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(product.soldCount) <= maxCount))){
+        if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))){
 
             htmlContentToAppend += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
@@ -53,7 +53,7 @@ function showProductsList(){
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">`+ product.name +`</h4>
-                            <small class="text-muted">` + product.soldCount + ` artículos</small>
+                            <small class="text-muted">` + product.cost + ` artículos</small>
                         </div>
                         <p class="mb-1">` + product.description + " " + product.currency + " " + product.cost + `</p>
                     </div>
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     document.getElementById("sortByCount").addEventListener("click", function(){
-        sortAndShowProducts(ORDER_BY_PROD_SOLD);
+        sortAndShowProducts(ORDER_BY_PROD_COST);
     });
 
     document.getElementById("clearRangeFilter").addEventListener("click", function(){

@@ -19,15 +19,14 @@
 <body class="text-center">
   <div class="container p-5">
     <div class="login">
-      <img class="logo" src= "../img/login.png">
-      <h2 >¡Entra aqui!</h2>
-      <form> 
+      <img class="logo" src= "img/login.png">
+      <h2 >Inicie sesion aqui</h2>
+      <form action=index.html> 
       <input id="user" type="text" placeholder="Email o Nombre de Usuario" required autofocus>
       <br>
       <input id="password" type="password" placeholder="Ingrese su contraseña">
       <br>
-      <input id="btn_ingresar" class="button" type="submit" value="Ingresar">
-
+      <button id="btn_ingresar" onclick="ingresar(user.value, password.value);">Ingresar</button>
       </form>
       
     </div>

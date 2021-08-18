@@ -2,14 +2,24 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-});
-let usuario= document.getElementById("user").Value;
-let password= document.getElementById("password").Value;
+    btn_guardar.addEventListener("click", function(e){
+        e.preventDefault();
+        sessionStorage.setItem("usuario", user.value);
+        sessionStorage.setItem("password", password.value);
+   
+        location.href="index.html";
+   
+    });
+    btn_ingresarr.addEventListener('click', function(e){
+        e.preventDefault();
 
-btn_ingresar.addEventListener('click', function(evento){
-    evento.preventDefault()
-    localStorage.setItem("usuario", usuario);
-    localStorage.setItem("contrasenia", password);
-    location.href = 'index.html'
+        window.location.href.endsWith ="index.html";
+    });
+    
+});
+
+btn_ingresarrr.addEventListener("click",function(e){
+    e.preventDefault();
+    location.href ="C:\Users\Facundo\Documents\GitHub\japecommerce\index.html";
 })
 

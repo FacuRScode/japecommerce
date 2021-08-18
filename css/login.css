@@ -41,7 +41,7 @@ font-size: 30px;
 
 }
 
-.login .button {
+#btn_ingresar{
   border: 1px solid transparent;
   background-color: #007bff;
   color: #fff;
