@@ -2,24 +2,17 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-    btn_guardar.addEventListener("click", function(e){
+    btn_ingresar.addEventListener("click", function(e){
         e.preventDefault();
-        sessionStorage.setItem("usuario", user.value);
-        sessionStorage.setItem("password", password.value);
+        sessionStorage.setItem("usuario", document.getElementById('user').value);
+        sessionStorage.setItem("password", document.getElementById('password').value);
    
-        location.href="index.html";
-   
-    });
-    btn_ingresarr.addEventListener('click', function(e){
-        e.preventDefault();
-
-        window.location.href.endsWith ="index.html";
-    });
-    
+        if (document.getElementById('user').value.length <= 5 || document.getElementById('password').value.length <=5){
+            alert('El usuario o la contraseña deben tener un minimo de 5 digitos');
+        }else{
+            alert(document.getElementById('user').value +', que bueno verte otra vez por acá');
+            location.href="index.html";
+        }
+    });   
 });
-
-btn_ingresarrr.addEventListener("click",function(e){
-    e.preventDefault();
-    location.href ="C:\Users\Facundo\Documents\GitHub\japecommerce\index.html";
-})
 

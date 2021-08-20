@@ -41,10 +41,14 @@ var getJSONData = function(url){
 }
 
 
-
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-   
+  if(self.location.pathname!=='/login.html'){
+    if (sessionStorage.getItem('usuario')==null||sessionStorage.getItem('password')==null){
+      alert('Para seguir viendo el contenido debe iniciar sesion');
+      self.location.href='login.html'
+  }
+  }
 });
