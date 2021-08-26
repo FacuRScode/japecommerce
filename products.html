@@ -33,13 +33,13 @@
                 <div class="col text-right">
                     <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
                         <label class="btn btn-light active" id="sortAsc" >
-                            <input type="radio" name="options" autocomplete="off" checked>A-Z
+                            <input type="radio" name="options" autocomplete="off" checked>Precios ascendentes
                         </label>
                         <label class="btn btn-light" id="sortDesc" >
-                            <input type="radio" name="options" autocomplete="off">Z-A
+                            <input type="radio" name="options" autocomplete="off">Precios descendentes
                         </label>
-                        <label class="btn btn-light" id="sortByCount" >
-                            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Vendidos.
+                        <label class="btn btn-light" id="sortBysoldCount" >
+                            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia.
                         </label>
                     </div>
                 </div>
@@ -52,10 +52,10 @@
                       <p class="font-weight-normal text-right my-2">Precio:</p>
                     </div>
                     <div class="col">
-                      <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                      <input class="form-control" type="number" placeholder="min." id="rangeFilterCostMin">
                     </div>
                     <div class="col">
-                      <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                      <input class="form-control" type="number" placeholder="máx." id="rangeFilterCostMax">
                     </div>
                     <div class="col-3 p-0">
                       <div class="btn-group" role="group">
@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="list-group" id="cat-list-container">
+                <div class="list-group" id="product-list-container">
                 </div>
             </div>
         </div>

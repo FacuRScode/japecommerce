@@ -4,8 +4,8 @@
 document.addEventListener("DOMContentLoaded", function(e){
     btn_ingresar.addEventListener("click", function(e){
         e.preventDefault();
-        sessionStorage.setItem("usuario", document.getElementById('user').value);
-        sessionStorage.setItem("password", document.getElementById('password').value);
+        localStorage.setItem("usuario", document.getElementById('user').value);
+        localStorage.setItem("password", document.getElementById('password').value);
    
         if (document.getElementById('user').value.length <= 5 || document.getElementById('password').value.length <=5){
             alert('El usuario o la contraseña deben tener un minimo de 5 digitos');
