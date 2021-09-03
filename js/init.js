@@ -45,10 +45,14 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-//Entrega_1
+//Entrega_2
+let nomUsuario = localStorage.getItem('usuario');
+usuario.textContent = nomUsuario;
+
 document.addEventListener("DOMContentLoaded", function(e){
-  if(self.location.pathname!=='/login.html'){
-    if (localStorage.getItem('usuario')==null||localStorage.getItem('password')==null){
+  if(self.location.pathname.endsWith!=='/login.html'){
+    if (nomUsuario==null||localStorage.getItem('password')==null){
+      usuario.textContent = "Nombre de Usuario";
       alert('Para seguir viendo el contenido debe iniciar sesion');
       self.location.href='login.html'
   }
