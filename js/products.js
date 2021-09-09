@@ -6,6 +6,7 @@ var currentSortCriteria = undefined;
 var minCost = undefined;
 var maxCost = undefined;
 
+//Entrega_2
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_COST)
@@ -34,7 +35,7 @@ function sortProducts(criteria, array){
 
     return result;
 }
-//Entrega_1
+
 function showProductsList(){
 
     let htmlContentToAppend = "";
@@ -79,7 +80,7 @@ function sortAndShowProducts(sortCriteria, productsArray){
 }
 
 
-//Entrega_1
+//Entrega_2
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
