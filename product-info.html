@@ -3,58 +3,112 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<title>eMercado - Todo lo que busques está aquí</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="" id="usuario"></a>
-    </div>
-  </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
+	<nav class="site-header sticky-top py-1 bg-dark">
+		<div class="container d-flex flex-column flex-md-row justify-content-between">
+			<a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+			<a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+			<a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+			<a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+			<a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+			<a class="py-2 d-none d-md-inline-block" href="" id="usuario"></a>
+		</div>
+	</nav>
+	<main role="main">
+		<div class="container mt-5">
+			<div class="text-center p-4">
+				<h2>Descripción del producto</h2>
+				<p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+			</div>
+			<h3 id="productName"></h3>
+			<hr class="my-3">
+			<dl>
+				<dt>Descripción</dt>
+				<dd>
+					<p id="productDescription"></p>
+				</dd>
+
+				<dt>Cantidad de productos vendidos</dt>
+				<dd>
+					<p id="soldCount"></p>
+				</dd>
+
+				<dt>Coste</dt>
+				<dd>
+					<p id="cost"></p> <p id="currency"></p>
+				</dd>
+
+				<dt>Imágenes ilustrativas</dt>
+				<dd>
+					<div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+					</div>
+				</dd>
+				<form action="" method="GET" id="form_comment">
+			<div class="row">
+			<div class="col-md-12 mb-3">
+			<p><input type="hidden" id="user" name="usuario"></dt><label for="productComment">¡Dejanos tu opinion!</label></p>
+			<p class="clasificacion">
+    <input id="radio1" type="radio" name="estrellas" value="5"><!--
+    --><label for="radio1" class="fa fa-star"></label><!--
+    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+    --><label for="radio2">★</label><!--
+    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+    --><label for="radio3">★</label><!--
+    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+    --><label for="radio4">★</label><!--
+    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+    --><label for="radio5">★</label>
+  </p>
+			<textarea class="form-control" id="productComment" name="comment" rows="3"></textarea>
+			</div>
+			</div>
+			<button class="btn btn-primary btn-lg" type="submit">Enviar</button>
+			</form> <hr>
+				<dt>Comentarios:</dt>
+				<dd>
+					<div class="list-group" id="comments-container">
+					</div>
+				</dd>
+			</dl>
+		</div>
+	</main>
+
+
+
+
+	<footer class="text-muted">
+		<div class="container">
+			<p class="float-right">
+				<a href="#">Volver arriba</a>
+			</p>
+			<p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+			<p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+		</div>
+	</footer>
+	<div id="spinner-wrapper">
+		<div class="lds-ring">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/product-info.js"></script>
 </body>
 
 </html>

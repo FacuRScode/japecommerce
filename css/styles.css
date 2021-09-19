@@ -136,6 +136,48 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
-.checked {
+p>.checked {
+  color: orange;
+}
+
+
+
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+p>label:hover,
+p>label:hover ~ label {
+  color: orange;
+}
+
+p>input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+div>.star{
   color: orange;
 }
