@@ -50,10 +50,8 @@ let nomUsuario = localStorage.getItem('usuario');
 usuario.textContent = nomUsuario;
 
 document.addEventListener("DOMContentLoaded", function(e){
-  if(self.location.pathname.endsWith!=='/login.html'){
-    console.log(true);
+  if(self.location.pathname.endsWith('/login.html')==false){
     if (nomUsuario==null||localStorage.getItem('password')==null){
-      console.log(false);
       usuario.textContent = "Nombre de Usuario";
       alert('Para seguir viendo el contenido debe iniciar sesion');
       self.location.href='login.html'
