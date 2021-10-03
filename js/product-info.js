@@ -21,10 +21,20 @@ document.addEventListener("DOMContentLoaded", function(e){
             costHTML.innerHTML = product.cost;
             currencyHTML.innerHTML = product.currency;
 
-            //Muestro las imagenes en forma de galería
             showImagesGallery(product.images);
-
+            
             document.getElementById("user").value = localStorage.getItem("usuario")
+
+            getJSONData(PRODUCTS_URL).then(function(resultObj){
+                if (resultObj.status === "ok")
+                {
+                    //product = objeto
+                    //related = array de objetos
+                    related = resultObj.data;
+                    showrelatedProducts(product, related);
+
+                }
+            });
         }
     });
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
@@ -34,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function(e){
             showCommentList(comments);
         }
     });
+    
 });
-
 
 function showImagesGallery(array){
 
@@ -81,4 +91,37 @@ function showCommentList(currentCommentsArray){
     }
 }
 
+function showrelatedProducts(object, array){
+
+    let htmlContentToAppend = "";
+    
+    objeto1 = object.relatedProducts[0]
+    objeto2 = object.relatedProducts[1];
+    
+
+    for(let i = 0;  array.length; i++){
+        let product = array[i];
+
+        if ((i == objeto1) || (i == objeto2)){
+            htmlContentToAppend += `
+            <a href="product-info.html" class="list-group-item list-group-item-action">
+            <div class="row">
+                <div class="col-3">
+                   <img src="` + product.imgSrc + `" alt="` + product.description + `" alt="` + product.cost + `" alt="` + product.currency + `" class="img-thumbnail">
+                </div>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">`+ product.name +`</h4>
+                       <small class="text-muted">` + product.soldCount + ` artículos</small>
+                   </div>
+                   <p class="mb-1">` + product.description + " " + product.currency + " " + product.cost + `</p>
+               </div>
+           </div>
+        </a>
+            `
+
+        document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
+        }
+    }
+}
 
