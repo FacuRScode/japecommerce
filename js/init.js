@@ -45,7 +45,7 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-//Entrega_2
+
 let nomUsuario = localStorage.getItem('usuario');
 usuario.textContent = nomUsuario;
 
@@ -57,4 +57,10 @@ document.addEventListener("DOMContentLoaded", function(e){
       self.location.href='login.html'
   }
   }
+});
+
+
+document.getElementById("end_session").addEventListener("click", function(){
+
+  localStorage.clear;
 });

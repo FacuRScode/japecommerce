@@ -95,14 +95,15 @@ function showrelatedProducts(object, array){
 
     let htmlContentToAppend = "";
     
-    objeto1 = object.relatedProducts[0]
-    objeto2 = object.relatedProducts[1];
+    firstRelated = object.relatedProducts[0]
+    secondRelated = object.relatedProducts[1];
     
 
-    for(let i = 0;  array.length; i++){
-        let product = array[i];
+    for(let i = 0; i < object.relatedProducts.length; i++){
 
-        if ((i == objeto1) || (i == objeto2)){
+        if (i= firstRelated){
+            let product = array[i];
+
             htmlContentToAppend += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
             <div class="row">
@@ -122,6 +123,32 @@ function showrelatedProducts(object, array){
 
         document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
         }
+        if (i= secondRelated){
+            let product = array[i];
+
+            htmlContentToAppend += `
+            <a href="product-info.html" class="list-group-item list-group-item-action">
+            <div class="row">
+                <div class="col-3">
+                   <img src="` + product.imgSrc + `" alt="` + product.description + `" alt="` + product.cost + `" alt="` + product.currency + `" class="img-thumbnail">
+                </div>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">`+ product.name +`</h4>
+                       <small class="text-muted">` + product.soldCount + ` artículos</small>
+                   </div>
+                   <p class="mb-1">` + product.description + " " + product.currency + " " + product.cost + `</p>
+               </div>
+           </div>
+        </a>
+            `
+
+        document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
+        }
+
+        
+
+
     }
 }
 
