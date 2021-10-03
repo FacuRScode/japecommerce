@@ -60,7 +60,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 
-document.getElementById("end_session").addEventListener("click", function(){
 
-  localStorage.clear;
+
+document.getElementById("end_session").addEventListener("click", function(){
+  self.location.href="login.html"
+
+  localStorage.clear();
 });
+
