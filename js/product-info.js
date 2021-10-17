@@ -8,30 +8,30 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj.status === "ok")
         {
             product = resultObj.data;
-            
+
             let productNameHTML  = document.getElementById("productName");
             let productDescriptionHTML = document.getElementById("productDescription");
             let soldCountHTML = document.getElementById("soldCount");
             let costHTML = document.getElementById("cost");
             let currencyHTML = document.getElementById("currency");
-            
+
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
             soldCountHTML.innerHTML = product.soldCount;
             costHTML.innerHTML = product.cost;
             currencyHTML.innerHTML = product.currency;
-            
+
             showImagesGallery(product.images);
-            
+
             document.getElementById("user").value = localStorage.getItem("usuario")
-            
+
             getJSONData(PRODUCTS_URL).then(function(resultObj){
                 if (resultObj.status === "ok")
                 {
 
                     related = resultObj.data;
                     showRelatedProducts(product, related);
-                    
+
                 }
             });
         }
@@ -47,20 +47,19 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 function showImagesGallery(array){
-    
     let htmlContentToAppend = "";
-    
+
     for(let i = 0; i < array.length; i++){
         let imageSrc = array[i];
-        
+
         htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-        <div class="d-block mb-4 h-100">
-        <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-        </div>
-        </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <div class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+                </div>
+            </div>
         `
-        
+
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
 }
@@ -91,12 +90,12 @@ function showCommentList(currentCommentsArray){
 }
 
 function showRelatedProducts(object, array){
-    
+
     let htmlContentToAppend = "";
-    
-    
+
+
     index = object.relatedProducts;
-    
+
     index.forEach(e =>{
         htmlContentToAppend += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
@@ -114,11 +113,11 @@ function showRelatedProducts(object, array){
             </div>
             </a>
             `
-            
+
             document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
 
     })
-    
+
 
 }
 
