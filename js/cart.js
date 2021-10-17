@@ -9,14 +9,14 @@ document.addEventListener("DOMContentLoaded", function(e){
             articleInCart = resultObj.data;
             showPurchasedProducts(articleInCart);
 
-            var quantityInputs = document.getElementById("count")
-            for (var i=0; i < quantityInputs.length; i++) {
-                var input = quantityInputs[i]
-                input.addEventListener('change', quantityChanged)
-            }
             updateTotal(articleInCart);
-
             
+            for(let i=0; i < articleInCart.articles.length; i++){
+                
+                document.getElementById(`${i}`).addEventListener('change',function(e){
+                    updateTotal(articleInCart);
+                })
+            }
         }
     });
 
@@ -40,7 +40,7 @@ function showPurchasedProducts(articles){
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">`+ arti.name +`</h4>
-                        Cantidad:<input type="number" value=${arti.count} id="count">
+                        Cantidad:<input type="number" value=${arti.count} id=${i} min="1">
                     </div>
                     <p class="mb-1">` + " " + arti.currency + " " + arti.unitCost + `</p>
                 </div>
@@ -52,32 +52,26 @@ function showPurchasedProducts(articles){
     }
 }
 
-function quantityChanged(event) {
-    var input = event.target
-    if (isNAN(input.value) || input.value <=0) {
-        input.value = 1
-    }
-    updateTotal();
-}
-
-
-
 function updateTotal(articles){
 
-    let htmlSubmitContentToAppend = '';
+        let htmlSubmitContentToAppend = '';
     let subTotal = 0;
-    quantity = document.getElementById("count").value;
+    
 
     for (let i = 0; i < articles.articles.length; i++) {
+
+        let quantity = document.getElementById(`${i}`).value;
+
         if (articles.articles[i].currency == "USD"){
-            subTotal += (articles.articles[i].unitCost) * 40 * input;
+            subTotal += (articles.articles[i].unitCost) * 40 * quantity;
         }
         if (articles.articles[i].currency == "UYU"){
-            subTotal += articles.articles[i].unitCost * input;
+            subTotal += articles.articles[i].unitCost * quantity;
         }
     }
     htmlSubmitContentToAppend += `<div <p class="mb-1">` + "Subtotal UYU: " + subTotal + `</p></div>`;
         document.getElementById('subtotal').innerHTML = htmlSubmitContentToAppend;
+    
 
 }
 
