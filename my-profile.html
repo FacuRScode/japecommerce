@@ -53,14 +53,64 @@
 </div>
 		</div>
 	</nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  
+  <div class="perfil-container">
+    <div class="perfil">
+      <form>
+        <p>Perfil de usuario</p>
+        <p>Nombre y Apellido:<span id="nameSurname"></span></p>
+        <p>Edad:<span id="age"></span> </p>
+        <p>E-mail:<span id="email"></span></p>
+        <p>Teléfono de contacto:<span id="phoneNumber"></span></p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Modificar
+        </button>
+      </form>
     </div>
   </div>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Ingrese sus datos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="default">
+            <tr>
+              <th>Datos</th>
+              <th>Ingresar</th>
+            </tr>
+          
+            <tr>
+              <td>Nombre y apellidos:</td>
+              <td><input id="nameAndSurname" type="text" placeholder="Ej:Facundo Romero"></input></td>
+            </tr>
+            <tr>
+              <td>Edad:</td>
+              <td><input id="userAge" type="text" placeholder="Ej:21"></input></td>
+            </tr>
+            <tr>
+              <td>E-mail:</td>
+              <td><input id="userEmail" type="text" placeholder="Ej:yo@gmail.com"></input></td>
+            </tr>
+            <tr>
+              <td>Teléfono de contacto:</td>
+              <td><input id="userPhoneNumber" type="text" placeholder="Ej:111111111"></input></td>
+            </tr>          
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="saveUserData">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>

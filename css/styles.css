@@ -181,3 +181,14 @@ p>input[type="radio"]:checked ~ label {
 div>.star{
   color: orange;
 }
+
+.perfil{
+  text-align: center;
+  margin: top 5%;
+}
+.perfil-container {
+  justify-content: center;
+}
+
+
+
