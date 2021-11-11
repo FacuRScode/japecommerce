@@ -192,3 +192,20 @@ div>.star{
 
 
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+#product-list-container {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}
